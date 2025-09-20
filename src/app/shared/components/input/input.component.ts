@@ -13,12 +13,14 @@ export class InputComponent  implements OnInit{
   @Input() type: inputType = "text" ;
   @Input() label: string = "" ;
   @Input() placeholder: string = "" ;
+  @Input() labelPlacement:string = "";
   @Input() control : FormControl = new FormControl();
   constructor() {}
   
   ngOnInit() {}
-  public ontype(Event: any){
-    this.control.setValue(Event.target.value);
+   
+  public ontype(event: any){
+    this.control.setValue(event.target.value);
+  }
 }
 
-}

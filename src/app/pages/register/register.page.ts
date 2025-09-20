@@ -13,12 +13,16 @@ public name!: FormControl;
   public lastName!: FormControl;
   public email!: FormControl;
   public password!: FormControl;
-  public pais!: FormControl;
   public registerForm!: FormGroup;
+
+  public doRegister(){
+    console.log(this.registerForm.value);
+    
+  }
   ngOnInit() {
     
   }
-  constructor(private readonly storageSrv: Storage, private readonly router: Router) {
+  constructor() {
     this.initForm();
  }
  private initForm(){
@@ -27,14 +31,14 @@ public name!: FormControl;
     this.lastName = new FormControl('', [Validators.required]);
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', [Validators.required]);
-    this.pais = new FormControl('', [Validators.required]);
+ 
 
     this.registerForm = new FormGroup({
       name: this.name,
       lastName: this.lastName,
       email: this.email,
       password: this.password,
-      pais: this.pais,
+     
     });
  }
 }
