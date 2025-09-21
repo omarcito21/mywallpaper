@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Auth } from 'src/app/core/providers/auth/auth';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ export class LoginPage implements OnInit {
 
 public async onlogin(){
   console.log(this.loginForm.value);
+  this.auth.login(this.email.value, this.password.value);
+
   
 }
 private initForm(){
@@ -28,7 +31,7 @@ private initForm(){
   }
 
 
-  constructor( ) {
+  constructor(private readonly auth:Auth ) {
     this.initForm();
     }
 

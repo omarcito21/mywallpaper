@@ -1,5 +1,7 @@
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/services/user/user';
+
 
 
 @Component({
@@ -15,14 +17,15 @@ public name!: FormControl;
   public password!: FormControl;
   public registerForm!: FormGroup;
 
-  public doRegister(){
+  public async doRegister(){
     console.log(this.registerForm.value);
+    await this.usersrv.create(this.registerForm.value);
     
   }
   ngOnInit() {
     
   }
-  constructor() {
+  constructor(private readonly usersrv:User) {
     this.initForm();
  }
  private initForm(){
