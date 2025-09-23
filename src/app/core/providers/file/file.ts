@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FilePicker } from "@capawesome/capacitor-file-picker";
 import { NativeToast } from '../nativeToast/native-toast';
+import { IImage } from 'src/interface/image.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class File {
       
     }   
     }
-    async pickImage(){
+     async pickImage(): Promise<IImage>{
       try {
        const image = await FilePicker.pickImages({
           limit:1,
@@ -24,12 +25,12 @@ export class File {
         const img = image.files[0];
   
       return{
-        data: img.data,
+       data: img.data || "",
         mimeType: img.mimeType,
         name: img.name,
       };
       } catch (error) {
-        await this.toast.show('unable to pick an imag');
+        await this.toast.show('unable to pick an imagen');
         throw error;
         
       }
