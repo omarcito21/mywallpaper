@@ -1,0 +1,86 @@
+
+ion-content {
+  --background: linear-gradient(-45deg, #7f00ff, #e100ff, #00c9ff, #92fe9d);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+ion-card {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+ion-card:hover {
+  transform: scale(1.02);
+}
+
+app-input {
+  width: 100%;
+  margin-bottom: 16px;
+
+  ion-input {
+    --color: #fff;
+    --placeholder-color: rgba(255, 255, 255, 0.7);
+    --highlight-color-focused: #ff00cc;
+    --highlight-color-invalid: #ff4d4d;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  ion-input.has-focus {
+    border-color: #ff00cc;
+    box-shadow: 0 0 12px #ff00cc;
+  }
+}
+
+app-button {
+  width: 100%;
+  margin-top: 12px;
+
+  ion-button {
+    --border-radius: 25px;
+    --background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff);
+    --background-activated: linear-gradient(45deg, #3333ff, #ff00cc, #00ccff);
+    --color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  ion-button:hover {
+    transform: scale(1.05);
+  }
+}
+
+.aContent a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.aContent a:hover {
+  color: #ff00cc;
+}

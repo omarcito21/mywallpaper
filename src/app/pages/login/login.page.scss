@@ -1,0 +1,119 @@
+.login-container {
+  // Fondo animado degradado
+  --background: linear-gradient(135deg, #ff0080, #7928ca, #2af598, #009efd);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  ion-card {
+    width: 90%;
+    max-width: 420px;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    background: #ffffffcc;
+    backdrop-filter: blur(15px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  ion-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  ion-card-content {
+    padding: 2.2rem;
+
+    // === INPUTS (Email y Password) ===
+    app-input {
+      display: block;
+      margin-bottom: 1.8rem;
+
+      ion-label {
+        font-weight: 700;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      ion-input {
+        --border-radius: 14px;
+        --padding-start: 16px;
+        --background: #fdfdfd;
+        border: 2px solid transparent;
+        transition: all 0.4s ease;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      // El input HTML interno
+      ion-input input {
+        border: none;
+        outline: none;
+      }
+
+      // Cuando el input tiene focus
+      ion-input.has-focus {
+        border: 2px solid #7928ca;
+        box-shadow: 0 0 15px #7928ca, 0 0 25px #ff0080;
+        background: #f9f4ff;
+        transform: scale(1.02);
+      }
+    }
+
+    // === LINK REGISTER ===
+    a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #009efd;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff0080;
+    }
+
+    // === BOTÓN LOGIN ===
+    app-button {
+      width: 100%;
+      margin-top: 1rem;
+
+      button {
+        border-radius: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 14px;
+        background: linear-gradient(90deg, #ff0080, #7928ca, #2af598, #009efd);
+        background-size: 300% 300%;
+        animation: gradientMove 6s ease infinite;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1rem;
+        box-shadow: 0 6px 18px rgba(121, 40, 202, 0.5);
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 22px rgba(255, 0, 128, 0.6);
+      }
+    }
+  }
+}
+
+// Animación del gradiente
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

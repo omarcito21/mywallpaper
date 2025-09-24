@@ -1,0 +1,78 @@
+ion-content {
+  --background: linear-gradient(-45deg, #7f00ff, #e100ff, #00c9ff, #92fe9d);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.header {
+  text-align: center;
+  padding: 20px;
+
+  .p p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 15px;
+  }
+
+  .languageContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    ion-button {
+      --border-radius: 20px;
+      --background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff);
+      --color: #fff;
+      font-weight: 600;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    ion-button:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+.container-carta {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+
+  app-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  app-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+
+ion-fab {
+  app-floating-button {
+    ion-fab-button {
+      --border-radius: 50%;
+      --box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    ion-fab-button:hover {
+      transform: scale(1.1);
+    }
+  }
+}
